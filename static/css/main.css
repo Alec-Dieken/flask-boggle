@@ -1,0 +1,50 @@
+:root {
+  --table-size: 400px;
+  --td-width-large: calc(var(--table-size) / 5);
+  --td-height-large: calc(var(--td-width-large) * 0.7);
+  --td-paddingtop-large: calc(var(--td-height-large) / 2.625);
+  --td-fontsize-large: calc(var(--td-paddingtop-large) * 1.5);
+  --game-container-margin: 100px;
+}
+
+body {
+  background-color: aliceblue;
+  min-width: 300px;
+}
+
+p {
+  font-size: 18px;
+  text-align: center;
+}
+
+#game-container {
+  width: fit-content;
+  height: fit-content;
+  margin: var(--game-container-margin) auto;
+}
+
+td {
+  width: var(--td-width-large);
+  height: var(--td-height-large);
+  padding-top: var(--td-paddingtop-large);
+  font-size: var(--td-fontsize-large);
+
+  background-color: rgb(184, 207, 209);
+  border: solid 1px grey;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 2px rgba(100, 100, 150, 0.7);
+  user-select: none;
+}
+
+form {
+  text-align: center;
+  margin: 30px 0;
+}
+
+@media screen and (max-width: 450px) {
+  :root {
+    --table-size: 300px;
+    --game-container-margin: 50px;
+  }
+}

@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+
+{% block title%}Boggle!{%endblock%}
+{# "board" is passed through app.py in the 'return' of a route def #}
+{% block content %}
+    
+
+    <div id="game-container">
+        <table>
+            <tbody>
+            {%for row in board%}
+                <tr>
+                {% for column in row%}
+                    <td>{{column}}</td>
+                {%endfor%}
+                </tr>
+            {%endfor%}
+            </tbody>
+        </table>
+    </div>
+
+    <p>Points: <span id='points'>0</span></p>
+
+    <form method="post">
+        <label for="guess">Guess: </label>
+        <input id="guess" type="text" name="guess" required />
+        
+        <button type="submit">Go!</button>
+    </form>
+
+    <p>Timer: <span id='timer'>60</span></p>
+{%endblock%}
